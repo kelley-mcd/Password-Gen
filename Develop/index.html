@@ -5,34 +5,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Kelley's Special Password Generator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>Generate the Most Secure Password</h1>
-    </header>
 
-    <div class="card">
-      <div class="card-header">
-        <h2>Generate a Password</h2>
-      </div>
+  <div class="container">
+    <h1 class="title">Password Generator</h1>
+    <h3 class="passwordDisplay">Your New Password</h3>
 
-      <div class="card-body">
-        <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
-      </div>
+    <form class="form">
 
-      <div class="card-footer">
-        <button id="generate" class="btn">Generate Password</button>
-      </div>
+      <label for="charSlider">Number of Characters</label>
+      <input id="charSlider" type="Range" min="8" max="128">
 
-    </div>
+      <label for="includeUppercase">Include Uppercase</label>
+      <input type="checkbox" id="includeUppercase">
+
+      <label for="includeNumbers">Include Numbers</label>
+      <input type="checkbox" id="includeNumbers">
+
+      <label for="includeSpecialC">Include Special Characters</label>
+      <input type="checkbox" id="includeSpecialC">
+
+      <button class="button" type="submit">Generate New Password</button>
+
+    </form>
+
 
   </div>
 
   <script src="script.js"></script>
+
 </body>
 
 </html>
