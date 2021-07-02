@@ -6,18 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="style.css" />
+  <title>Password Generator</title>
 </head>
 
 <body>
 
   <div class="container">
     <h1 class="title">Password Generator</h1>
-    <h3 class="passwordDisplay">Your New Password</h3>
+    <h3 class="passwordDisplay" id="passwordDisplay">Your New Password</h3>
 
-    <form class="form">
+    <form id="passwordGenForm" class="form">
 
       <label for="charSlider">Number of Characters</label>
-      <input id="charSlider" type="Range" min="8" max="128">
+      <div class= "character-amount-container">
+        <input type="Range" min="8" max="128" value= "50" id="charSlider">
+        <input class="number-input" type="number" min="8" max="128" id="charSlider2">
+      </div>
 
       <label for="includeUppercase">Include Uppercase</label>
       <input type="checkbox" id="includeUppercase">
