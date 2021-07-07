@@ -7,16 +7,11 @@ const passwordGenForm = document.getElementById ("passwordGenForm")
 const passwordDisplay = document.getElementById ("passwordDisplay")
 
 
-const UPPERCASE_CHAR_CODES = arrayFromLowToHigh(65, 90)
-const LOWERCASE_CHAR_CODES = arrayFromLowToHigh(97, 122)
-const NUMBER_CHAR_CODES = arrayFromLowToHigh(48, 57)
-const SYMBOL_CHAR_CODES = arrayFromLowToHigh(33, 47).concat(
-    arrayFromLowToHigh(58, 64)
-).concat(
-    arrayFromLowToHigh(91, 96)
-).concat(
-    arrayFromLowToHigh(123, 126)
-)
+const UPPERCASE_CHAR_CODES = arrayFromLowToHigh("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+const LOWERCASE_CHAR_CODES = arrayFromLowToHigh("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")
+const NUMBER_CHAR_CODES = arrayFromLowToHigh("1", "2", "3", "4", "5", "6", "7", "8", "9")
+const SYMBOL_CHAR_CODES = arrayFromLowToHigh("~", "!", "@", "#", "$", "%", "^", "&", "*")
+
 
 charSlider.addEventListener("input", syncCharacterAmount)
 charSlider2.addEventListener("input", syncCharacterAmount)
@@ -40,12 +35,14 @@ function generatePassword(charSlider, includeUppercase, includeNumbers, includeS
    const passwordCharacters = []
    for (let i= 0; i < charSlider, i++;) {
        const characterCode = charCodes[Math.floor(Math.random() * charCodes.lenth)]
-       passwordCharacters.push(String.fromCharCode(characterCode))
+       passwordCharacters.push(characterCode)
    }
    return passwordCharacters.join('')
 }
 
 function arrayFromLowToHigh(low, high) {
+    
+
     const array = []
     for (let i = low; i <= high; i++) {
         array.push(i)
